@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Messages{% endblock %}
+
+{% block content %}
+
+
+<div class="mail">
+    {{ email }}
+</div>
+
+<br>
+<div class="progress-bar__container">
+    <span class="progress-bar__text">Uploaded Successfully!</span>
+    <div class="progress-bar-begin-path">
+    </div>
+        <div class="progress-bar progress-bar-middle-path">
+    </div>
+
+        <div class="progress-bar-end-path">
+    </div>
+
+</div>
+
+<p>mail checks: <div class="message_count"></div><p>
+<h1>сообщения: {{ messages_count }}</h1>
+<div class="table-wrapper">
+    <table class="message-table" border="1">
+        <thead>
+        <tr>
+            <th>Тема</th>
+            <th>Дата отправки</th>
+            <th>Дата получения</th>
+            <th>Содержание</th>
+            <th>Прикрепленные файлы</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for message in messages %}
+        <tr>
+            <td>{{message.title}}</td>
+            <td>{{message.sent_date}}</td>
+            <td>{{message.receiving_date}}</td>
+            <td>{{message.text}}</td>
+            <td>{{message.attached_file_link_list}}</td>
+        </tr>
+        {% endfor %}
+
+        {% for message in stored_messages %}
+        <tr>
+            <td>{{message.subject}}</td>
+            <td>{{message.sent_date}}</td>
+            <td>{{message.receiving_date}}</td>
+            <td>{{message.content}}</td>
+            <td>{{message.attached_file_link_list}}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td class="no-objects" colspan="5">Нет объектов для отображения.</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/app.js' %}"></script>
+{% endblock %}

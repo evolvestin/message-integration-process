@@ -1,0 +1,137 @@
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+main{
+    width: 80%;
+}
+
+table{
+    width: 100%
+}
+
+h1 {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+
+body {
+  justify-content: center;
+  align-items: center;
+  background: #0f0f0f;
+  height: 100%;
+  display: flex;
+  padding: 20px;
+  margin: 0;
+  color: #c6c6c6;
+  font-family: 'Roboto', sans-serif;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.progress-bar__container {
+    display: flex;
+    width: 30%;
+    height: 1rem;
+    border-radius: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s;
+    will-change: transform;
+    box-shadow: 0 0 5px #fff;
+    margin: 0 auto;
+}
+
+.progress-bar-begin-path{
+    background-color: #7b906e;
+}
+
+.progress-bar-end-path{
+    background-color: #fff;
+}
+
+.progress-bar {
+    flex-grow: 100;
+    position: relative;
+    height: 100%;
+    background-color: #c76363;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: sans-serif;
+    transition-duration: 0.5s;
+}
+
+.progress-bar__text {
+  display: none;
+  position:absolute
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-y: auto; /* Включите вертикальный скроллинг */
+    max-height: 250px;
+}
+
+
+.fade {
+    opacity: 1; /* Начальная видимость */
+    animation: fadeInOut 1.2s ease-in-out infinite; /* Настройки анимации */
+
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0; /* Начинаем с полной прозрачности */
+    }
+    50% {
+        opacity: 1; /* Полная видимость в середине анимации */
+    }
+    100% {
+        opacity: 0; /* В конце снова полная прозрачность */
+    }
+}
